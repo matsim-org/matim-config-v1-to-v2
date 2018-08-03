@@ -1,13 +1,24 @@
-# matsim-example-project
+MATSim Config v1 to v2 converter
+================================
 
-A small example of how to use MATSim as a library.
+A very simple utility to convert the obsolete MATSim v1 config file format to
+now-standard v2 format.
 
-By default, this project uses the latest (pre-)release. In order to use a different version, edit `pom.xml`.
+It will work with configs in v1 formats that are valid for release 0.10.x,
+and will convert them to v2 configs that are valid for the same release.
 
-A recommended directory structure is as follows:
-* `src` for sources
-* `original-input-data` for original input data (typically not in MATSim format)
-* `scenarios` for MATSim scenarios, i.e. MATSim input and output data.  A good way is the following:
-  * One subdirectory for each scenario, e.g. `scenarios/mySpecialScenario01`.
-  * This minimally contains a config file, a network file, and a population file.
-  * Output goes one level down, e.g. `scenarios/mySpecialScenario01/output-from-a-good-run/...`.
+This is a separate project in order to allow removing the v1 format from MATSim altogether.
+
+Usage
+-----
+
+The project for the moment only contains one executable class `org.matsim.run.ConvertConfig`,
+that takes two arguments: the path to the config to convert, and the path to the newly created
+converted config.
+
+TODO
+----
+
+* [ ] Simple GUI for those users that are not confident with the command line
+* [ ] Tests
+* [ ] More detailed instructions
